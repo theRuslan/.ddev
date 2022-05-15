@@ -1,0 +1,7 @@
+#!/bin/bash
+
+## Description: Sync DB from Production to DDEV
+## Usage: sync-db
+## Example: ddev sync-db
+
+ddev drush sql-sync @self.live @self.dev -v

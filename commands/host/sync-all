@@ -1,0 +1,11 @@
+#!/bin/bash
+
+## Description: Sync DB, public and private files from Production to DDEV
+## Usage: sync-all
+## Example: ddev sync-all
+
+ddev sync-db
+
+ddev sync-files-public
+
+ddev sync-files-private

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+## Description: Sync private files from Production to DDEV
+## Usage: sync-files-private
+## Example: ddev sync-files-private
+
+ddev drush rsync @self.live:%private @self.dev:%private -v

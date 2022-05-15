@@ -1,0 +1,7 @@
+#!/bin/bash
+
+## Description: Sync public files from Production to DDEV
+## Usage: sync-files-public
+## Example: ddev sync-files-public
+
+ddev drush rsync @self.live:%files @self.dev:%files -v
