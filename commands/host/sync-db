@@ -4,4 +4,16 @@
 ## Usage: sync-db
 ## Example: ddev sync-db
 
-ddev drush sql-sync @self.live @self.dev -v
+projectType=${DDEV_PROJECT_TYPE}
+
+if [[ $projectType == "drupal8" || $projectType == "drupal9" ]]; then
+  pathProd="@self.live"
+  pathDev="@self.dev"
+fi
+
+if [[ $projectType == "drupal7" ]]; then
+  pathProd="@live"
+  pathDev="@dev"
+fi
+
+ddev drush sql-sync $pathProd $pathDev -v

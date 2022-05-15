@@ -4,4 +4,16 @@
 ## Usage: sync-files-public
 ## Example: ddev sync-files-public
 
-ddev drush rsync @self.live:%files @self.dev:%files -v
+projectType=${DDEV_PROJECT_TYPE}
+
+if [[ $projectType == "drupal8" || $projectType == "drupal9" ]]; then
+  pathProd="@self.live:%files"
+  pathDev="@self.dev:%files"
+fi
+
+if [[ $projectType == "drupal7" ]]; then
+  pathProd="@live:%files"
+  pathDev="@dev:%files"
+fi
+
+ddev drush rsync $pathProd $pathDev -v
