@@ -1,0 +1,9 @@
+#!/bin/bash
+
+## Description: Sync public and private files from Production to DDEV
+## Usage: sync-files
+## Example: ddev sync-files
+
+ddev sync-files-public
+
+ddev sync-files-private
