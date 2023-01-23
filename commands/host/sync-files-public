@@ -6,7 +6,7 @@
 
 projectType=${DDEV_PROJECT_TYPE}
 
-if [[ $projectType == "drupal8" || $projectType == "drupal9" ]]; then
+if [[ $projectType == "drupal8" || $projectType == "drupal9" || $projectType == "drupal10" ]]; then
   pathProd="@self.live:%files"
   pathDev="@self.dev:%files"
 fi
