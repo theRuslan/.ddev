@@ -6,6 +6,8 @@
 
 projectType=${DDEV_PROJECT_TYPE}
 
+excludePaths="js:css:styles:php:languages:translations:sync"
+
 if [[ $projectType == "drupal8" || $projectType == "drupal9" || $projectType == "drupal10" ]]; then
   pathProd="@self.live:%files"
   pathDev="@self.dev:%files"
@@ -16,4 +18,4 @@ if [[ $projectType == "drupal7" ]]; then
   pathDev="@dev:%files"
 fi
 
-ddev drush rsync $pathProd $pathDev -v
+ddev drush --exclude-paths=$excludePaths rsync $pathProd $pathDev -v
