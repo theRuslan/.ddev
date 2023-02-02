@@ -4,8 +4,8 @@
 ## Usage: sync-all
 ## Example: ddev sync-all
 
-ddev sync-db
+echo y | ddev sync-db
 
-ddev sync-files-public
+echo y | ddev sync-files-public
 
-ddev sync-files-private
+echo y | ddev sync-files-private

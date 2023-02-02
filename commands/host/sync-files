@@ -4,6 +4,6 @@
 ## Usage: sync-files
 ## Example: ddev sync-files
 
-ddev sync-files-public
+echo y | ddev sync-files-public
 
-ddev sync-files-private
+echo y | ddev sync-files-private
